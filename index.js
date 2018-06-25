@@ -38,6 +38,23 @@ const madslibs = [
             { partOfSpeech: "noun", replace: "Perception" },
             { partOfSpeech: "adjective", replace: "pointed" }
         ]
+    },
+    {
+        madslib: `The mathematics of human behavior.
+        All those ugly variables. Some bad
+        math with this shrike fellow. Are
+        you reconstructing his fantasies?
+        What kind of problems does he have?`,
+        replacements: [
+            { partOfSpeech: "noun", replace: "mathematics" },
+            { partOfSpeech: "adjective", replace: "human" },
+            { partOfSpeech: "noun", replace: "behavior" },
+            { partOfSpeech: "adjective", replace: "ugly" },
+            { partOfSpeech: "noun (plural)", replace: "variables" },
+            { partOfSpeech: "gerund", replace: "reconstructing" },
+            { partOfSpeech: "noun (plural)", replace: "fantasies" }
+        ]
+
     }
 ];
 

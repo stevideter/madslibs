@@ -4,15 +4,11 @@ import "./App.css";
 import Madslibs from "./Madslibs/Madslibs";
 import Fillin from "./Fillin/Fillin";
 import "typeface-roboto";
+import Button from '@material-ui/core/Button'
+
 class App extends Component {
     constructor(props) {
         super(props);
-        // const replacements = [
-        //     { partOfSpeech: "noun (plural)", replace: "eyes" },
-        //     { partOfSpeech: "verb", replace: "see" },
-        //     { partOfSpeech: "verb", replace: "focus" },
-        //     { partOfSpeech: "color", replace: "white" },
-        // ];
         this.state = {
             replacements: [],
             words: [],
@@ -22,6 +18,17 @@ class App extends Component {
         };
         this.handleWordChange = this.handleWordChange.bind(this);
         this.handleDone = this.handleDone.bind(this);
+        this.newMadslib = this.newMadslib.bind(this);
+    }
+    newMadslib() {
+        this.setState({
+            replacements: [],
+            words: [],
+            fillinDone: false,
+            madslib: "",
+            showMadslib: false
+        });
+        this.getMadslib();
     }
     handleDone() {
         this.setState({ showMadslib: true });
@@ -64,12 +71,17 @@ class App extends Component {
                     </h1>
                 </header>
                 {showMadslib && (
+                    <div>
                     <Madslibs
                         words={this.state.words}
                         replacements={this.state.replacements}
                         madslib={this.state.madslib}
                     />
+                    <Button variant="raised" onClick={this.newMadslib}>Another!</Button>
+                    </div>
                 )}
+                {!showMadslib && (
+
                 <Fillin
                     words={this.state.words}
                     handleWordChange={this.handleWordChange}
@@ -77,6 +89,7 @@ class App extends Component {
                     fillinDone={this.state.fillinDone}
                     handleDone={this.handleDone}
                 />
+                )}
             </div>
         );
     }
