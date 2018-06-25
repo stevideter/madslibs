@@ -2,7 +2,10 @@ import React, { Component } from "react";
 import "./Madslibs.css";
 
 class Madslibs extends Component {
-    state = { madslib: "" };
+    constructor(props) {
+        super(props);
+        this.state = { madslib: "" };
+    }
 
     componentDidMount() {
         this.getMadslib();
@@ -21,14 +24,25 @@ class Madslibs extends Component {
             });
     };
     render() {
-        const madslib = this.state.madslib;
+        console.log('render');
+        let modifiedMadslib = this.state.madslib;
+        console.log(this.props.words);
+        for (let i = 0; i < this.props.words.length; i++) {
+            const word = this.props.words[i];
+            if (word && word.length > 0) {
+                console.log(word);
+                const re = new RegExp(this.props.replacements[i], "ig");
+                modifiedMadslib = modifiedMadslib.replace(re, word);
+            }
+            console.log(modifiedMadslib);
+        }
         return (
             <div className="Madslibs">
                 <header className="Madslibs-header">
                     <h1 className="Madslibs-title">Apéritif</h1>
                 </header>
                 <p className="Madslibs-intro">
-                {madslib}
+                {modifiedMadslib}
                 </p>
             </div>
         );
