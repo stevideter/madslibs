@@ -2,44 +2,20 @@ import React, { Component } from "react";
 import "./Madslibs.css";
 
 class Madslibs extends Component {
-    constructor(props) {
-        super(props);
-        this.state = { madslib: "" };
-    }
 
-    componentDidMount() {
-        this.getMadslib();
-    }
-
-    getMadslib = () => {
-        fetch("/api/madslib")
-            .then(res => res.json())
-            .then(madslib => {
-                console.log(madslib);
-                this.setState({ madslib: madslib.madslib});
-            })
-            .catch(err => {
-                console.log(err);
-                this.setState({madslib: "i let you know me, see me"});
-            });
-    };
     render() {
-        console.log('render');
-        let modifiedMadslib = this.state.madslib;
-        console.log(this.props.words);
+        let modifiedMadslib = this.props.madslib;
         for (let i = 0; i < this.props.words.length; i++) {
             const word = this.props.words[i];
             if (word && word.length > 0) {
-                console.log(word);
-                const re = new RegExp(this.props.replacements[i], "ig");
+                const re = new RegExp(this.props.replacements[i].replace, "ig");
                 modifiedMadslib = modifiedMadslib.replace(re, word);
             }
-            console.log(modifiedMadslib);
         }
         return (
             <div className="Madslibs">
                 <header className="Madslibs-header">
-                    <h1 className="Madslibs-title">Apéritif</h1>
+                    <h1 className="Madslibs-title">Madslibs</h1>
                 </header>
                 <p className="Madslibs-intro">
                 {modifiedMadslib}

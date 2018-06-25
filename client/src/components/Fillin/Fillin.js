@@ -1,19 +1,16 @@
 import React, { Component } from "react";
 import "./Fillin.css";
 import MyTextInput from "../TextInput/TextInput";
-
+import Button from '@material-ui/core/Button'
 class Fillin extends Component {
-    constructor(props) {
-        super(props);
-        console.log(props);
-    }
 
     renderTextInput(i) {
+        const inputField = this.props.replacements[i];
         return (
             <MyTextInput
                 key={i}
                 index={i}
-                label='noun'
+                label={inputField.partOfSpeech || 'noun'}
                 value={this.props.words[i]}
                 onChange={this.props.handleWordChange}
             />
@@ -32,8 +29,10 @@ class Fillin extends Component {
         }
         return (
             <div className="Fillin">
+                <h1>Fill in the following</h1>
                 {errorMsg}
                 <ul>{words}</ul>
+                <Button variant="raised" disabled={!this.props.fillinDone} onClick={this.props.handleDone}>done</Button>
             </div>
         );
     }
