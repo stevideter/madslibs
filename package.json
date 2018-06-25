@@ -1,6 +1,10 @@
 {
   "name": "ml2",
   "version": "0.0.1",
+  "engines": {
+    "node": "8.11.3",
+    "npm": "6.1.x"
+  },
   "private": true,
   "devDependencies": {},
   "dependencies": {
@@ -46,6 +50,8 @@
     "whatwg-fetch": "2.0.3"
   },
   "scripts": {
+    "heroku-prebuild": "echo This runs before Heroku installs your dependencies.",
+    "heroku-postbuild": "npm run build",
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom"
