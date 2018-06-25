@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import madspout from './madslibs-pout.png';
+import madspout from '../madslibs-pout.png';
 import './App.css';
+import Madslibs from './Madslibs/Madslibs';
 
 class App extends Component {
   render() {
@@ -10,9 +11,7 @@ class App extends Component {
           <img src={madspout} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to Madslibs!</h1>
         </header>
-        <p className="App-intro">
-          Fill the list below to get your Madslibs!
-        </p>
+        <Madslibs />
       </div>
     );
   }

@@ -1,0 +1,33 @@
+.Madslibs {
+    text-align: center;
+  }
+  
+  .Madslibs-logo {
+    animation: App-logo-spin infinite 20s linear;
+    height: 80px;
+  }
+  
+  .Madslibs-header {
+    background-color: #aa3030;
+    padding: 20px;
+    color: white;
+  }
+  
+  .Madslibs-title {
+    font-size: 1.5em;
+  }
+  
+  .Madslibs-intro {
+    font-size: large;
+    margin-top: 25px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 100px;
+    text-align: left;
+  }
+  
+  @keyframes App-logo-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  
