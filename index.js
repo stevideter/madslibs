@@ -54,13 +54,53 @@ const madslibs = [
             { partOfSpeech: "gerund", replace: "reconstructing" },
             { partOfSpeech: "noun (plural)", replace: "fantasies" }
         ]
-
+    },
+    {
+        madslib: `We both know the unreality of
+        taking a life, of people who die
+        when we have no other choice. We
+        know in those moments they’re not
+        flesh, but light and air and color.`,
+        replacements: [
+            { partOfSpeech: "noun", replace: "unreality" },
+            { partOfSpeech: "gerund", replace: "taking" },
+            { partOfSpeech: "noun", replace: "life" },
+            { partOfSpeech: "verb", replace: "die" },
+            { partOfSpeech: "noun", replace: "choice" },
+            { partOfSpeech: "noun", replace: "flesh" },
+            { partOfSpeech: "noun", replace: "light" },
+            { partOfSpeech: "noun", replace: "air" },
+            { partOfSpeech: "noun", replace: "color" }
+        ]
+    },
+    {
+        madslib: `You sit in that chair, as you have
+        so many times before. It holds
+        among its molecules the vibrations
+        of all our conversations ever held
+        in its presence.
+        All the exchanges, the petty
+        irritations, deadly revelations,
+        the flat announcements of disaster.
+        The grunts and poetry of life.`,
+        replacements: [
+            { partOfSpeech: "noun", replace: "chair" },
+            { partOfSpeech: "noun (plural)", replace: "molecules" },
+            { partOfSpeech: "noun (plural)", replace: "vibrations" },
+            { partOfSpeech: "noun (plural)", replace: "conversations" },
+            { partOfSpeech: "adjective", replace: "petty" },
+            { partOfSpeech: "adjective", replace: "deadly" },
+            { partOfSpeech: "adjective", replace: "flat" },
+            { partOfSpeech: "noun", replace: "grunts" },
+            { partOfSpeech: "noun", replace: "poetry" },
+            { partOfSpeech: "noun", replace: "life" }
+        ]
     }
 ];
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
-  }
+}
 
 // Put all API endpoints under '/api'
 app.get("/api/madslib", (req, res) => {
