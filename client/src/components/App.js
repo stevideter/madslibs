@@ -19,6 +19,7 @@ class App extends Component {
         this.handleWordChange = this.handleWordChange.bind(this);
         this.handleDone = this.handleDone.bind(this);
         this.newMadslib = this.newMadslib.bind(this);
+        this.updateMadslib = this.updateMadslib.bind(this);
     }
     newMadslib() {
         this.setState({
@@ -26,11 +27,25 @@ class App extends Component {
             words: [],
             fillinDone: false,
             madslib: "",
-            showMadslib: false
+            showMadslib: false,
+            modifiedMadslib: '',
         });
         this.getMadslib();
     }
+    updateMadslib() {
+        let modifiedMadslib = this.state.madslib;
+        for (let i = 0; i < this.state.words.length; i++) {
+            const word = this.state.words[i];
+            if (word && word.length > 0) {
+                const re = new RegExp(this.state.replacements[i].replace, "ig");
+                modifiedMadslib = modifiedMadslib.replace(re, word);
+            }
+        }
+        this.setState({modifiedMadslib});
+
+    }
     handleDone() {
+        console.log(this.state.madslib, this.state.replacements, this.state.words, this.state.modifiedMadslib);
         this.setState({ showMadslib: true });
     }
     handleWordChange(i, value) {
@@ -39,6 +54,7 @@ class App extends Component {
         const fillinDone =
             words.filter(word => word.length > 0).length === words.length;
         this.setState({ words, fillinDone });
+        this.updateMadslib();
     }
     componentDidMount() {
         this.getMadslib();
@@ -75,7 +91,7 @@ class App extends Component {
                     <Madslibs
                         words={this.state.words}
                         replacements={this.state.replacements}
-                        madslib={this.state.madslib}
+                        modifiedMadslib={this.state.modifiedMadslib}
                     />
                     <Button variant="raised" onClick={this.newMadslib}>Another!</Button>
                     </div>

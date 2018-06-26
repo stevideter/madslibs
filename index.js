@@ -15,8 +15,8 @@ const madslibs = [
     `,
         replacements: [
             { partOfSpeech: "noun (plural)", replace: "eyes" },
-            { partOfSpeech: "verb", replace: "see" },
-            { partOfSpeech: "verb", replace: "focus" },
+            { partOfSpeech: "verb (present)", replace: "see" },
+            { partOfSpeech: "verb (present)", replace: "focus" },
             { partOfSpeech: "color", replace: "white" }
         ]
     },
@@ -31,7 +31,7 @@ const madslibs = [
     `,
         replacements: [
             { partOfSpeech: "noun", replace: "empathy" },
-            { partOfSpeech: "verb", replace: "assume" },
+            { partOfSpeech: "verb (present)", replace: "assume" },
             { partOfSpeech: "noun", replace: "point" },
             { partOfSpeech: "noun", replace: "view" },
             { partOfSpeech: "adjective", replace: "uncomfortable" },
@@ -65,7 +65,7 @@ const madslibs = [
             { partOfSpeech: "noun", replace: "unreality" },
             { partOfSpeech: "gerund", replace: "taking" },
             { partOfSpeech: "noun", replace: "life" },
-            { partOfSpeech: "verb", replace: "die" },
+            { partOfSpeech: "verb (present)", replace: "die" },
             { partOfSpeech: "noun", replace: "choice" },
             { partOfSpeech: "noun", replace: "flesh" },
             { partOfSpeech: "noun", replace: "light" },
