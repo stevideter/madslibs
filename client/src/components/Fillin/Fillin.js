@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import "./Fillin.css";
 import MyTextInput from "../TextInput/TextInput";
 import Button from '@material-ui/core/Button'
-class Fillin extends Component {
+class Fillin extends PureComponent {
 
     renderTextInput(i) {
         const inputField = this.props.replacements[i];

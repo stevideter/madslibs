@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import "./TextInput.css";
 import TextInput  from '@material-ui/core/TextField';
 
-class MyTextInput extends Component {
+class MyTextInput extends PureComponent {
     constructor(props) {
         super(props);
         this.handleChange = this.handleChange.bind(this);

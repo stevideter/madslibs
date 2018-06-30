@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import madspout from "../madslibs-pout.png";
 import "./App.css";
 import Madslibs from "./Madslibs/Madslibs";
@@ -6,7 +6,7 @@ import Fillin from "./Fillin/Fillin";
 import "typeface-roboto";
 import Button from '@material-ui/core/Button'
 
-class App extends Component {
+class App extends PureComponent {
     constructor(props) {
         super(props);
         this.state = {

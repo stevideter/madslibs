@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import "./Madslibs.css";
 
-class Madslibs extends Component {
+class Madslibs extends PureComponent {
 
     render() {
         return (
